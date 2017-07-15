@@ -95,7 +95,7 @@
                 app:fab_icon="@drawable/grafic"
                 app:fab_size="mini"
                 android:padding="15dp"
-                app:fab_title="Mostrar grafica"
+                app:fab_title="Watch Grafic"
                 app:fab_colorNormal="@color/dark_transaparente"/>
 
             <com.getbase.floatingactionbutton.FloatingActionButton
@@ -105,7 +105,7 @@
                 app:fab_icon="@drawable/save"
                 app:fab_size="mini"
                 android:padding="6dp"
-                app:fab_title="Guardar"
+                app:fab_title="Save Bunddle"
                 app:fab_colorNormal="@color/dark_transaparente"/>
 
             <com.getbase.floatingactionbutton.FloatingActionButton
@@ -114,7 +114,7 @@
                 android:layout_height="wrap_content"
                 app:fab_icon="@drawable/home"
                 app:fab_size="mini"
-                app:fab_title="Inicio"
+                app:fab_title="Home"
                 app:fab_colorNormal="@color/dark_transaparente"/>
 
         </com.getbase.floatingactionbutton.FloatingActionsMenu>

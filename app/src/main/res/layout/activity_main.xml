@@ -12,17 +12,361 @@
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:id="@+id/contenedor">
 
-                <ListView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/lis_comandos"/>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="500dp"
+                android:background="#FFFFFF"
+                android:layout_marginRight="15dp"
+                android:layout_marginLeft="15dp">
 
+                <TextView
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:textSize="13sp"
+                    android:layout_marginTop="10dp"
+                    android:gravity="center_vertical"
+                    android:layout_marginLeft="20dp"
+                    android:layout_alignParentLeft="true"
+                    android:id="@+id/txt_comando1"
+                    android:textColor="#191919"
+                    android:text="Tipo de movimiento"/>
+
+                <TextView
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:textSize="13sp"
+                    android:layout_marginTop="10dp"
+                    android:gravity="center_vertical"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="20dp"
+                    android:id="@+id/txt_comando2"
+                    android:textColor="#191919"
+                    android:text="Tipo de movimiento"/>
+                <EditText
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:id="@+id/input_comando1"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginTop="10dp"
+                    android:hint="txt"
+                    android:layout_below="@id/txt_comando1"/>
+                <EditText
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/input_comando2"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginTop="10dp"
+                    android:hint="txt"
+                    android:layout_below="@id/txt_comando2"/>
+                <TextView
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:textSize="13sp"
+                    android:layout_marginTop="10dp"
+                    android:gravity="center_vertical"
+                    android:layout_marginLeft="20dp"
+                    android:layout_below="@id/input_comando1"
+                    android:layout_alignParentLeft="true"
+                    android:id="@+id/txt_comando3"
+                    android:textColor="#191919"
+                    android:text="Tipo de movimiento"/>
+
+                <TextView
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:textSize="13sp"
+                    android:gravity="center_vertical"
+                    android:layout_below="@id/input_comando2"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginTop="10dp"
+                    android:id="@+id/txt_comando4"
+                    android:textColor="#191919"
+                    android:text="Tipo de movimiento"/>
+                <EditText
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:id="@+id/input_comando3"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginTop="10dp"
+                    android:hint="txt"
+                    android:layout_below="@id/txt_comando3"/>
+                <EditText
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/input_comando4"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginTop="10dp"
+                    android:hint="txt"
+                    android:layout_below="@id/txt_comando4"/>
+                <TextView
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:textSize="13sp"
+                    android:layout_marginTop="10dp"
+                    android:gravity="center_vertical"
+                    android:layout_marginLeft="20dp"
+                    android:layout_below="@id/input_comando3"
+                    android:layout_alignParentLeft="true"
+                    android:id="@+id/txt_comando5"
+                    android:textColor="#191919"
+                    android:text="Tipo de movimiento"/>
+
+                <TextView
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:textSize="13sp"
+                    android:gravity="center_vertical"
+                    android:layout_below="@id/input_comando4"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginTop="10dp"
+                    android:id="@+id/txt_comando6"
+                    android:textColor="#191919"
+                    android:text="Tipo de movimiento"/>
+                <EditText
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:id="@+id/input_comando5"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginTop="10dp"
+                    android:hint="txt"
+                    android:layout_below="@id/txt_comando5"/>
+                <EditText
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/input_comando6"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginTop="10dp"
+                    android:hint="txt"
+                    android:layout_below="@id/txt_comando6"/>
+                <TextView
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:textSize="13sp"
+                    android:layout_marginTop="10dp"
+                    android:gravity="center_vertical"
+                    android:layout_marginLeft="20dp"
+                    android:layout_below="@id/input_comando5"
+                    android:layout_alignParentLeft="true"
+                    android:id="@+id/txt_comando7"
+                    android:textColor="#191919"
+                    android:text="Tipo de movimiento"/>
+
+                <TextView
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:textSize="13sp"
+                    android:gravity="center_vertical"
+                    android:layout_below="@id/input_comando6"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginTop="10dp"
+                    android:id="@+id/txt_comando8"
+                    android:textColor="#191919"
+                    android:text="Tipo de movimiento"/>
+                <EditText
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:id="@+id/input_comando7"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginTop="10dp"
+                    android:hint="txt"
+                    android:layout_below="@id/txt_comando7"/>
+                <EditText
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/input_comando8"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginTop="10dp"
+                    android:hint="txt"
+                    android:layout_below="@id/txt_comando8"/>
+                <TextView
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:textSize="13sp"
+                    android:layout_marginTop="10dp"
+                    android:gravity="center_vertical"
+                    android:layout_marginLeft="20dp"
+                    android:layout_below="@id/input_comando7"
+                    android:layout_alignParentLeft="true"
+                    android:id="@+id/txt_comando9"
+                    android:textColor="#191919"
+                    android:text="Tipo de movimiento"/>
+
+                <TextView
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:textSize="13sp"
+                    android:gravity="center_vertical"
+                    android:layout_below="@id/input_comando8"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginTop="10dp"
+                    android:id="@+id/txt_comando10"
+                    android:textColor="#191919"
+                    android:text="Tipo de movimiento"/>
+                <EditText
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:id="@+id/input_comando9"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginTop="10dp"
+                    android:hint="txt"
+                    android:layout_below="@id/txt_comando9"/>
+                <EditText
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/input_comando10"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginTop="10dp"
+                    android:hint="txt"
+                    android:layout_below="@id/txt_comando10"/>
+                <TextView
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:textSize="13sp"
+                    android:layout_marginTop="10dp"
+                    android:gravity="center_vertical"
+                    android:layout_marginLeft="20dp"
+                    android:layout_below="@id/input_comando9"
+                    android:layout_alignParentLeft="true"
+                    android:id="@+id/txt_comando11"
+                    android:textColor="#191919"
+                    android:text="Tipo de movimiento"/>
+
+                <TextView
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:textSize="13sp"
+                    android:gravity="center_vertical"
+                    android:layout_below="@id/input_comando10"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginTop="10dp"
+                    android:id="@+id/txt_comando12"
+                    android:textColor="#191919"
+                    android:text="Tipo de movimiento"/>
+                <EditText
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:id="@+id/input_comando11"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginTop="10dp"
+                    android:hint="txt"
+                    android:layout_below="@id/txt_comando11"/>
+                <EditText
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/input_comando12"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginTop="10dp"
+                    android:hint="txt"
+                    android:layout_below="@id/txt_comando12"/>
+                <TextView
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:textSize="13sp"
+                    android:layout_marginTop="10dp"
+                    android:gravity="center_vertical"
+                    android:layout_marginLeft="20dp"
+                    android:layout_below="@id/input_comando11"
+                    android:layout_alignParentLeft="true"
+                    android:id="@+id/txt_comando13"
+                    android:textColor="#191919"
+                    android:text="Tipo de movimiento"/>
+
+                <TextView
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:textSize="13sp"
+                    android:gravity="center_vertical"
+                    android:layout_below="@id/input_comando12"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginTop="10dp"
+                    android:id="@+id/txt_comando14"
+                    android:textColor="#191919"
+                    android:text="Tipo de movimiento"/>
+                <EditText
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:id="@+id/input_comando13"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginTop="10dp"
+                    android:hint="txt"
+                    android:layout_below="@id/txt_comando13"/>
+                <EditText
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/input_comando14"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginTop="10dp"
+                    android:hint="txt"
+                    android:layout_below="@id/txt_comando14"/>
+            </RelativeLayout>
+
+
+            <com.getbase.floatingactionbutton.FloatingActionsMenu
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/agregar"
+                app:fab_addButtonColorNormal="@color/colorPrimaryDark"
+                app:fab_addButtonColorPressed="@color/colorAccent"
+                android:src="@drawable/add"
+                app:fab_labelStyle="@style/Etiquetas"
+                app:fabSize="normal"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_gravity="bottom|right|end"
+                android:layout_marginBottom="22dp"
+                android:layout_marginRight="15dp"
+                app:elevation="2dp">
+
+                <com.getbase.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/accion_Send"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:fab_icon="@drawable/send"
+                    app:fab_size="mini"
+                    android:padding="15dp"
+                    app:fab_title="Bunddle"
+                    app:fab_colorNormal="@color/dark_transaparente"/>
+
+                <com.getbase.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/accion_Add"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:fab_icon="@drawable/send"
+                    app:fab_size="mini"
+                    android:padding="6dp"
+                    app:fab_title="Add"
+                    app:fab_colorNormal="@color/dark_transaparente"/>
+
+            </com.getbase.floatingactionbutton.FloatingActionsMenu>
             <ProgressBar
                 android:layout_width="40dp"
                 android:layout_height="40dp"
@@ -31,22 +375,9 @@
                 android:id="@+id/progress"
                 android:visibility="gone"/>
         </RelativeLayout>
-        <android.support.design.widget.FloatingActionButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/process"
-            app:backgroundTint="#025090"
-            android:src="@drawable/process"
-            app:fabSize="normal"
-            android:layout_alignParentBottom="true"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentRight="true"
-            android:layout_gravity="bottom|right|end"
-            android:layout_marginBottom="15dp"
-            android:layout_marginRight="15dp"
-            app:elevation="2dp"/>
-
+        </ScrollView>
 
     </android.support.design.widget.CoordinatorLayout>
+
 
 </android.support.v4.widget.DrawerLayout>
