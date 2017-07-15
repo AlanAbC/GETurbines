@@ -21,21 +21,24 @@
 
                 <RelativeLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/filtro">
+                    android:layout_height="50dp"
+                    android:id="@+id/topBar"
+                    android:background="#025090">
 
-                    <Spinner
+                    <TextView
                         android:layout_width="match_parent"
-                        android:layout_height="35dp"
-                        android:layout_marginTop="15dp"
-                        android:layout_marginLeft="50dp"
-                        android:layout_marginRight="50dp"
-                        android:id="@+id/spin_filtro" />
-
+                        android:layout_height="wrap_content"
+                        android:text="GTC"
+                        android:textStyle="bold"
+                        android:textSize="23sp"
+                        android:layout_marginTop="10dp"
+                        android:textAlignment="center"
+                        android:textColor="#ffffff"
+                        android:id="@+id/txt_bar"/>
                 </RelativeLayout>
                 <RelativeLayout
                     android:id="@+id/lay_grafica"
-                    android:layout_below="@id/filtro"
+                    android:layout_below="@id/topBar"
                     android:layout_width="wrap_content"
                     android:layout_height="350dp"
                     android:layout_marginTop="40dp">
@@ -58,7 +61,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="20dp">
 
-                    <TextView
+                    <!--<TextView
                         android:layout_width="150dp"
                         android:layout_alignParentRight="true"
                         android:text="0000.00000"
@@ -71,12 +74,11 @@
                         android:text="Promedio:"
                         android:layout_height="wrap_content"
                         android:layout_alignParentLeft="true"
-                        android:layout_marginLeft="40dp"/>
+                        android:layout_marginLeft="40dp"/>-->
                     <TextView
                         android:layout_width="150dp"
                         android:layout_alignParentRight="true"
                         android:layout_marginTop="15dp"
-                        android:layout_below="@id/txt_promedio_input"
                         android:text="0000.00000"
                         android:id="@+id/txt_max_input"
                         android:layout_height="wrap_content"
@@ -84,7 +86,6 @@
                     <TextView
                         android:layout_width="150dp"
                         android:id="@+id/txt_max"
-                        android:layout_below="@id/txt_promedio"
                         android:layout_marginTop="15dp"
                         android:text="Máximo:"
                         android:layout_height="wrap_content"
@@ -145,7 +146,7 @@
                         app:fab_icon="@drawable/save"
                         app:fab_size="mini"
                         android:padding="6dp"
-                        app:fab_title="Save Bunddle"
+                        app:fab_title="Save Bundle"
                         app:fab_colorNormal="@color/dark_transaparente"/>
 
                     <com.getbase.floatingactionbutton.FloatingActionButton

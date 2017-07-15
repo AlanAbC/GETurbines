@@ -407,7 +407,7 @@
                 app:fab_icon="@drawable/send"
                 app:fab_size="mini"
                 android:padding="15dp"
-                app:fab_title="Bunddle"
+                app:fab_title="Bundle"
                 app:fab_colorNormal="@color/dark_transaparente"/>
 
             <com.getbase.floatingactionbutton.FloatingActionButton

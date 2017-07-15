@@ -130,7 +130,7 @@ public class Tabla extends AppCompatActivity {
         guardar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(Tabla.this, Tabla.class);
+                Intent i = new Intent(Tabla.this, MainActivity.class);
                 startActivity(i);
             }
         });
