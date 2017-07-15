@@ -34,6 +34,14 @@
                         android:textAlignment="center"
                         android:textColor="#ffffff"
                         android:id="@+id/txt_bar"/>
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:src="@drawable/change"
+                        android:id="@+id/change"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="15dp"
+                        android:layout_marginTop="15dp"/>
                 </RelativeLayout>
                 <RelativeLayout
                     android:id="@+id/lay_table"
