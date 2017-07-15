@@ -19,10 +19,26 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:id="@+id/contenedor">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="#025090">
 
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="GTC"
+                    android:textStyle="bold"
+                    android:textSize="23sp"
+                    android:layout_marginTop="10dp"
+                    android:textAlignment="center"
+                    android:textColor="#ffffff"
+                    android:id="@+id/topBar"/>
+            </RelativeLayout>
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:layout_marginTop="50dp"
                 android:background="#FFFFFF">
 
                 <TextView
@@ -35,7 +51,7 @@
                     android:layout_alignParentLeft="true"
                     android:id="@+id/txt_comando1"
                     android:textColor="#191919"
-                    android:text="Tipo de movimiento"/>
+                    android:text="atmosphere-p0"/>
 
                 <TextView
                     android:layout_width="150dp"
@@ -47,7 +63,7 @@
                     android:layout_marginRight="20dp"
                     android:id="@+id/txt_comando2"
                     android:textColor="#191919"
-                    android:text="Tipo de movimiento"/>
+                    android:text="atmosphere-t0"/>
                 <EditText
                     android:layout_width="150dp"
                     android:layout_height="wrap_content"
@@ -55,16 +71,20 @@
                     android:id="@+id/input_comando1"
                     android:layout_alignParentLeft="true"
                     android:layout_marginTop="10dp"
-                    android:hint="txt"
+                    android:hint="default=100000"
+                    android:inputType="number"
+                    android:textSize="10sp"
                     android:layout_below="@id/txt_comando1"/>
                 <EditText
                     android:layout_width="150dp"
                     android:layout_height="wrap_content"
                     android:id="@+id/input_comando2"
+                    android:inputType="number"
                     android:layout_alignParentRight="true"
                     android:layout_marginRight="20dp"
                     android:layout_marginTop="10dp"
-                    android:hint="txt"
+                    android:hint="default=288"
+                    android:textSize="10sp"
                     android:layout_below="@id/txt_comando2"/>
                 <TextView
                     android:layout_width="150dp"
@@ -77,7 +97,7 @@
                     android:layout_alignParentLeft="true"
                     android:id="@+id/txt_comando3"
                     android:textColor="#191919"
-                    android:text="Tipo de movimiento"/>
+                    android:text="inlet-sigma"/>
 
                 <TextView
                     android:layout_width="150dp"
@@ -90,24 +110,28 @@
                     android:layout_marginTop="10dp"
                     android:id="@+id/txt_comando4"
                     android:textColor="#191919"
-                    android:text="Tipo de movimiento"/>
+                    android:text="comp-pi_c"/>
                 <EditText
                     android:layout_width="150dp"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="20dp"
                     android:id="@+id/input_comando3"
+                    android:inputType="number"
                     android:layout_alignParentLeft="true"
                     android:layout_marginTop="10dp"
-                    android:hint="txt"
+                    android:hint="default=0.98"
+                    android:textSize="10sp"
                     android:layout_below="@id/txt_comando3"/>
                 <EditText
                     android:layout_width="150dp"
                     android:layout_height="wrap_content"
                     android:id="@+id/input_comando4"
+                    android:inputType="number"
                     android:layout_alignParentRight="true"
                     android:layout_marginRight="20dp"
                     android:layout_marginTop="10dp"
-                    android:hint="txt"
+                    android:hint="default=5"
+                    android:textSize="10sp"
                     android:layout_below="@id/txt_comando4"/>
                 <TextView
                     android:layout_width="150dp"
@@ -120,7 +144,7 @@
                     android:layout_alignParentLeft="true"
                     android:id="@+id/txt_comando5"
                     android:textColor="#191919"
-                    android:text="Tipo de movimiento"/>
+                    android:text="comp-eta_stag_p"/>
 
                 <TextView
                     android:layout_width="150dp"
@@ -133,24 +157,28 @@
                     android:layout_marginTop="10dp"
                     android:id="@+id/txt_comando6"
                     android:textColor="#191919"
-                    android:text="Tipo de movimiento"/>
+                    android:text="comb_chamber-eta_burn"/>
                 <EditText
                     android:layout_width="150dp"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="20dp"
+                    android:inputType="number"
                     android:id="@+id/input_comando5"
                     android:layout_alignParentLeft="true"
                     android:layout_marginTop="10dp"
-                    android:hint="txt"
+                    android:hint="default=0.89"
+                    android:textSize="10sp"
                     android:layout_below="@id/txt_comando5"/>
                 <EditText
                     android:layout_width="150dp"
                     android:layout_height="wrap_content"
                     android:id="@+id/input_comando6"
+                    android:inputType="number"
                     android:layout_alignParentRight="true"
                     android:layout_marginRight="20dp"
                     android:layout_marginTop="10dp"
-                    android:hint="txt"
+                    android:hint="default=0.98"
+                    android:textSize="10sp"
                     android:layout_below="@id/txt_comando6"/>
                 <TextView
                     android:layout_width="150dp"
@@ -163,7 +191,7 @@
                     android:layout_alignParentLeft="true"
                     android:id="@+id/txt_comando7"
                     android:textColor="#191919"
-                    android:text="Tipo de movimiento"/>
+                    android:text="comb_chamber-Q_n"/>
 
                 <TextView
                     android:layout_width="150dp"
@@ -176,24 +204,28 @@
                     android:layout_marginTop="10dp"
                     android:id="@+id/txt_comando8"
                     android:textColor="#191919"
-                    android:text="Tipo de movimiento"/>
+                    android:text="comb_chamber-T_stag_out"/>
                 <EditText
                     android:layout_width="150dp"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="20dp"
                     android:id="@+id/input_comando7"
+                    android:inputType="number"
                     android:layout_alignParentLeft="true"
                     android:layout_marginTop="10dp"
-                    android:hint="txt"
+                    android:hint="default=43000000"
+                    android:textSize="10sp"
                     android:layout_below="@id/txt_comando7"/>
                 <EditText
                     android:layout_width="150dp"
                     android:layout_height="wrap_content"
                     android:id="@+id/input_comando8"
+                    android:inputType="number"
                     android:layout_alignParentRight="true"
                     android:layout_marginRight="20dp"
                     android:layout_marginTop="10dp"
-                    android:hint="txt"
+                    android:hint="default=1600"
+                    android:textSize="10sp"
                     android:layout_below="@id/txt_comando8"/>
                 <TextView
                     android:layout_width="150dp"
@@ -206,7 +238,7 @@
                     android:layout_alignParentLeft="true"
                     android:id="@+id/txt_comando9"
                     android:textColor="#191919"
-                    android:text="Tipo de movimiento"/>
+                    android:text="turbine-eta_stag_p"/>
 
                 <TextView
                     android:layout_width="150dp"
@@ -219,24 +251,28 @@
                     android:layout_marginTop="10dp"
                     android:id="@+id/txt_comando10"
                     android:textColor="#191919"
-                    android:text="Tipo de movimiento"/>
+                    android:text="turbine-p_stag_out"/>
                 <EditText
                     android:layout_width="150dp"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="20dp"
+                    android:inputType="number"
                     android:id="@+id/input_comando9"
                     android:layout_alignParentLeft="true"
                     android:layout_marginTop="10dp"
-                    android:hint="txt"
+                    android:hint="default=0.91"
+                    android:textSize="10sp"
                     android:layout_below="@id/txt_comando9"/>
                 <EditText
                     android:layout_width="150dp"
                     android:layout_height="wrap_content"
                     android:id="@+id/input_comando10"
+                    android:inputType="number"
                     android:layout_alignParentRight="true"
                     android:layout_marginRight="20dp"
                     android:layout_marginTop="10dp"
-                    android:hint="txt"
+                    android:hint="default=170000"
+                    android:textSize="10sp"
                     android:layout_below="@id/txt_comando10"/>
                 <TextView
                     android:layout_width="150dp"
@@ -249,7 +285,7 @@
                     android:layout_alignParentLeft="true"
                     android:id="@+id/txt_comando11"
                     android:textColor="#191919"
-                    android:text="Tipo de movimiento"/>
+                    android:text="load-power"/>
 
                 <TextView
                     android:layout_width="150dp"
@@ -262,24 +298,28 @@
                     android:layout_marginTop="10dp"
                     android:id="@+id/txt_comando12"
                     android:textColor="#191919"
-                    android:text="Tipo de movimiento"/>
+                    android:text="outlet-sigma"/>
                 <EditText
                     android:layout_width="150dp"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="20dp"
+                    android:inputType="number"
                     android:id="@+id/input_comando11"
                     android:layout_alignParentLeft="true"
                     android:layout_marginTop="10dp"
-                    android:hint="txt"
+                    android:hint="default=2300000"
+                    android:textSize="10sp"
                     android:layout_below="@id/txt_comando11"/>
                 <EditText
                     android:layout_width="150dp"
                     android:layout_height="wrap_content"
                     android:id="@+id/input_comando12"
+                    android:inputType="number"
                     android:layout_alignParentRight="true"
                     android:layout_marginRight="20dp"
                     android:layout_marginTop="10dp"
-                    android:hint="txt"
+                    android:hint="default=0.99"
+                    android:textSize="10sp"
                     android:layout_below="@id/txt_comando12"/>
                 <TextView
                     android:layout_width="150dp"
@@ -292,7 +332,7 @@
                     android:layout_alignParentLeft="true"
                     android:id="@+id/txt_comando13"
                     android:textColor="#191919"
-                    android:text="Tipo de movimiento"/>
+                    android:text="regenerator-T_stag_hot_in"/>
 
 
 
@@ -307,24 +347,28 @@
                     android:layout_marginTop="10dp"
                     android:id="@+id/txt_comando14"
                     android:textColor="#191919"
-                    android:text="Tipo de movimiento"/>
+                    android:text="regenerator-T_stag_hot_out"/>
                 <EditText
                     android:layout_width="150dp"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="20dp"
+                    android:inputType="number"
                     android:id="@+id/input_comando13"
                     android:layout_alignParentLeft="true"
                     android:layout_marginTop="10dp"
-                    android:hint="txt"
+                    android:textSize="10sp"
+                    android:hint="default=1100"
                     android:layout_below="@id/txt_comando13"/>
                 <EditText
                     android:layout_width="150dp"
                     android:layout_height="wrap_content"
                     android:id="@+id/input_comando14"
+                    android:textSize="10sp"
+                    android:inputType="number"
                     android:layout_alignParentRight="true"
                     android:layout_marginRight="20dp"
                     android:layout_marginTop="10dp"
-                    android:hint="txt"
+                    android:hint="default=900"
                     android:layout_below="@id/txt_comando14"/>
             </RelativeLayout>
 
