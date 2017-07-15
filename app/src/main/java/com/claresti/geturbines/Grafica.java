@@ -2,10 +2,13 @@ package com.claresti.geturbines;
 
 import android.content.Intent;
 import android.graphics.Color;
+import android.graphics.Outline;
+import android.icu.util.Output;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.ProgressBar;
 
 import com.android.volley.Request;
 import com.android.volley.Response;
@@ -26,44 +29,46 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 public class Grafica extends AppCompatActivity {
 
-    ArrayList<Variables> var;
-    String urls="";
-    String [] [] datos;
-    ArrayList<Outputs> outputs;
-    //variables para el control de floatingButton
-    FloatingActionButton tabla;
-    FloatingActionButton guardar;
-    FloatingActionButton home;
+    // Declaracion de variables del layout
+    private FloatingActionButton tabla;
+    private FloatingActionButton guardar;
+    private FloatingActionButton home;
+    private ProgressBar progreso;
+
+    // Declaracion de objetos
+    private ArrayList<Variables> var;
+    private ArrayList<Outputs> outputs;
+
+    // Declaracion de variables extra
+    String urls="192.168.43.233/ge/api/index.php?";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         getSupportActionBar().hide();
         setContentView(R.layout.activity_grafica);
-        var= ArrayVariables.getArrayVariables();
-        datos= new String [var.size()] [14];
 
-        for(int i =0; i<=var.size();i++){
-            datos[i][0]=var.get(i).getValor0();
-            datos[i][1]=var.get(i).getValor1();
-            datos[i][2]=var.get(i).getValor2();
-            datos[i][3]=var.get(i).getValor3();
-            datos[i][4]=var.get(i).getValor4();
-            datos[i][5]=var.get(i).getValor5();
-            datos[i][6]=var.get(i).getValor6();
-            datos[i][7]=var.get(i).getValor7();
-            datos[i][8]=var.get(i).getValor8();
-            datos[i][9]=var.get(i).getValor9();
-            datos[i][10]=var.get(i).getValor10();
-            datos[i][11]=var.get(i).getValor11();
-            datos[i][12]=var.get(i).getValor12();
-            datos[i][13]=var.get(i).getValor13();
-        }
+        //Asignacion de variables del layout
+        tabla = (FloatingActionButton)findViewById(R.id.accion_verTabla);
+        guardar = (FloatingActionButton)findViewById(R.id.accion_guardar);
+        home = (FloatingActionButton)findViewById(R.id.accion_Home);
+        progreso = (ProgressBar)findViewById(R.id.progress);
 
-        //Seccion de control de floatingButton
-        tabla=(FloatingActionButton)findViewById(R.id.accion_verTabla);
+        // Asignacion de variables de objetos
+        var = ArrayVariables.getArrayVariables();
+        outputs = new ArrayList<Outputs>();
+
+        // Llamada a los metos para crear listeners y cargar la informacion inicial
+        setListeners();
+        cargarRespuesta();
+    }
+
+    private void setListeners() {
         tabla.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -71,7 +76,6 @@ public class Grafica extends AppCompatActivity {
                 startActivity(i);
             }
         });
-        guardar=(FloatingActionButton)findViewById(R.id.accion_guardar);
         guardar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -79,7 +83,6 @@ public class Grafica extends AppCompatActivity {
                 startActivity(i);
             }
         });
-        home=(FloatingActionButton)findViewById(R.id.accion_Home);
         home.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -89,78 +92,84 @@ public class Grafica extends AppCompatActivity {
         });
     }
 
-    /*public void cargarRespuesta(){
-        //progreso.setVisibility(View.VISIBLE);
-        Log.i("JSON", "Si entro");
-        final Gson gson = new Gson();
-        JsonObjectRequest request;
-        VolleySingleton.getInstance(Grafica.this).
-                addToRequestQueue(
-                        request = new JsonObjectRequest(
-                                Request.Method.GET,
-                                urls, datos,
-                                new Response.Listener<JSONObject>() {
-                                    @Override
-                                    public void onResponse(JSONObject response) {
-                                        try {
-                                            String res = response.getString("estado");
-                                            switch(res){
-                                                case "1":
-                                                    Log.i("peticion", "caso 1");
-                                                    outputs = new ArrayList<Outputs>();
-                                                    JSONArray jArrayMarcadores = response.getJSONArray("data");
-                                                    Outputs[] arraOutputs = gson.fromJson(jArrayMarcadores.toString(), Outputs[].class);
-                                                    Log.i("peticion", "tamaño: " + arrayOutputs.length);
-                                                    for(int i = 0; i < arrayMovimientos.length; i++){
-                                                        outputs.add(arrayMovimientos[i]);
-                                                    }
-                                                    //progreso.setVisibility(View.GONE);
-                                                    break;
-                                                case "0":
-                                                    Log.i("peticion", "caso 0");
-                                                    //listMovimientos.setAdapter(null);
-                                                    arrayOutputs= null;
-                                                    //Regresar mensaje de que no hay registros
-                                                    //progreso.setVisibility(View.GONE);
-                                                    break;
-                                                default:
-                                                    Log.i("peticion", "caso default");
-                                                    arrayOutputs = null;
-                                                    //listMovimientos.setAdapter(null);
-                                                    //progreso.setVisibility(View.GONE);
-                                                    //msg("Ocurrio un problema al conectarse con el sertvidor");
-                                                    break;
-                                            }
-                                        }catch(JSONException json){
-                                            Log.e("JSON", json.toString());
-                                        }
-                                    }
-                                },
-                                new Response.ErrorListener() {
-                                    @Override
-                                    public void onErrorResponse(VolleyError error) {
+    public void cargarRespuesta(){
+        progreso.setVisibility(View.VISIBLE);
+        for(Variables v : var){
+           final Gson gson = new Gson();
+           JsonObjectRequest request;
+           VolleySingleton.getInstance(Grafica.this).
+                   addToRequestQueue(
+                           request = new JsonObjectRequest(
+                                   Request.Method.GET ,
+                                   urls + "android=0&v1=" + v.getValor0() +
+                                           "&v2=" + v.getValor1() +
+                                           "&v3=" + v.getValor2() +
+                                           "&v4=" + v.getValor3() +
+                                           "&v5=" + v.getValor4() +
+                                           "&v6=" + v.getValor5() +
+                                           "&v7=" + v.getValor6() +
+                                           "&v8=" + v.getValor7() +
+                                           "&v9=" + v.getValor8() +
+                                           "&v10=" + v.getValor9() +
+                                           "&v11=" + v.getValor10() +
+                                           "&v12=" + v.getValor11() +
+                                           "&v13="  + v.getValor12() +
+                                           "&v14=" + v.getValor13() ,
+                                   new Response.Listener<JSONObject>() {
+                                       @Override
+                                       public void onResponse(JSONObject response) {
+                                           try {
+                                               String res = response.getString("res");
+                                               switch(res){
+                                                   case "1":
+                                                       Log.i("peticion", "caso 1");
+                                                       Outputs o = new Outputs();
+                                                       JSONArray jArrayMarcadores = response.getJSONArray("data");
+                                                       Outputs[] arraycuentasTotales = gson.fromJson(jArrayMarcadores.toString(), Outputs[].class);
+                                                       Log.i("peticion", "tamaño: " + arraycuentasTotales.length);
+                                                       outputs.add(arraycuentasTotales[0]);
+                                                       break;
+                                                   case "0":
 
-                                    }
-                                }
-                        )
-                );
-        request.setRetryPolicy(new RetryPolicy() {
-            @Override
-            public int getCurrentTimeout() {
-                return 50000;
-            }
+                                                       break;
+                                                   default:
 
-            @Override
-            public int getCurrentRetryCount() {
-                return 50000;
-            }
+                                                       break;
+                                               }
+                                           }catch(JSONException json){
+                                               Log.e("JSON", json.toString());
+                                           }
+                                       }
+                                   },
+                                   new Response.ErrorListener() {
+                                       @Override
+                                       public void onErrorResponse(VolleyError error) {
 
-            @Override
-            public void retry(VolleyError error) throws VolleyError {
+                                       }
+                                   }
+                           )
+                   );
+           request.setRetryPolicy(new RetryPolicy() {
+               @Override
+               public int getCurrentTimeout() {
+                   return 50000;
+               }
 
-            }
-        });
-    }*/
+               @Override
+               public int getCurrentRetryCount() {
+                   return 50000;
+               }
+
+               @Override
+               public void retry(VolleyError error) throws VolleyError {
+
+               }
+           });
+       }
+       progreso.setVisibility(View.GONE);
+       rellenarGraficaCategorias();
+    }
+
     private void rellenarGraficaCategorias() {
         //creacion de la grafica
         BarChart barChart = (BarChart) findViewById(R.id.graficaDatos);
