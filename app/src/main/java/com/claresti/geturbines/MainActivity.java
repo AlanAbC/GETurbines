@@ -12,13 +12,13 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         getSupportActionBar().hide();
         setContentView(R.layout.activity_main);
-        //send=(com.getbase.floatingactionbutton.FloatingActionButton) findViewById(R.id.accion_Send);
-        //send.setOnClickListener(new View.OnClickListener() {
-            //@Override
-          //  public void onClick(View v) {
-          //      Intent i= new Intent(MainActivity.this, Grafica.class);
-            //    startActivity(i);
-        //    }
-       // });
+        send=(com.getbase.floatingactionbutton.FloatingActionButton) findViewById(R.id.accion_Send);
+        send.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i= new Intent(MainActivity.this, Grafica.class);
+                startActivity(i);
+            }
+        });
     }
 }

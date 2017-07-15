@@ -331,44 +331,7 @@
             </RelativeLayout>
 
 
-            <com.getbase.floatingactionbutton.FloatingActionsMenu
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/agregar"
-                app:fab_addButtonColorNormal="@color/colorPrimaryDark"
-                app:fab_addButtonColorPressed="@color/colorAccent"
-                android:src="@drawable/add"
-                app:fab_labelStyle="@style/Etiquetas"
-                app:fabSize="normal"
-                android:layout_alignParentBottom="true"
-                android:layout_alignParentEnd="true"
-                android:layout_alignParentRight="true"
-                android:layout_gravity="bottom|right|end"
-                android:layout_marginBottom="22dp"
-                android:layout_marginRight="15dp"
-                app:elevation="2dp">
 
-                <com.getbase.floatingactionbutton.FloatingActionButton
-                    android:id="@+id/accion_Send"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    app:fab_icon="@drawable/send"
-                    app:fab_size="mini"
-                    android:padding="15dp"
-                    app:fab_title="Bunddle"
-                    app:fab_colorNormal="@color/dark_transaparente"/>
-
-                <com.getbase.floatingactionbutton.FloatingActionButton
-                    android:id="@+id/accion_Add"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    app:fab_icon="@drawable/send"
-                    app:fab_size="mini"
-                    android:padding="6dp"
-                    app:fab_title="Add"
-                    app:fab_colorNormal="@color/dark_transaparente"/>
-
-            </com.getbase.floatingactionbutton.FloatingActionsMenu>
             <ProgressBar
                 android:layout_width="40dp"
                 android:layout_height="40dp"
@@ -378,7 +341,44 @@
                 android:visibility="gone"/>
         </RelativeLayout>
         </ScrollView>
+        <com.getbase.floatingactionbutton.FloatingActionsMenu
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/agregar"
+            app:fab_addButtonColorNormal="@color/colorPrimaryDark"
+            app:fab_addButtonColorPressed="@color/colorAccent"
+            android:src="@drawable/add"
+            app:fab_labelStyle="@style/Etiquetas"
+            app:fabSize="normal"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_gravity="bottom|right|end"
+            android:layout_marginBottom="22dp"
+            android:layout_marginRight="15dp"
+            app:elevation="2dp">
 
+            <com.getbase.floatingactionbutton.FloatingActionButton
+                android:id="@+id/accion_Send"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:fab_icon="@drawable/send"
+                app:fab_size="mini"
+                android:padding="15dp"
+                app:fab_title="Bunddle"
+                app:fab_colorNormal="@color/dark_transaparente"/>
+
+            <com.getbase.floatingactionbutton.FloatingActionButton
+                android:id="@+id/accion_Add"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:fab_icon="@drawable/addi"
+                app:fab_size="mini"
+                android:padding="6dp"
+                app:fab_title="Add"
+                app:fab_colorNormal="@color/dark_transaparente"/>
+
+        </com.getbase.floatingactionbutton.FloatingActionsMenu>
     </android.support.design.widget.CoordinatorLayout>
 
 
