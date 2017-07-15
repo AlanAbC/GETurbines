@@ -1,0 +1,329 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.claresti.geturbines.InformacionElemento">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/tv_textAtmosphere_p0"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:layout_marginTop="30dp"
+                android:text="atmosphere.p0" />
+
+            <TextView
+                android:id="@+id/txt_atmosphere_p0"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="40dp"
+                android:text="0000.00000"
+                android:layout_marginTop="5dp"
+                android:layout_below="@id/tv_textAtmosphere_p0"/>
+
+            <TextView
+                android:id="@+id/tv_textAtmosphere_T0"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@id/txt_atmosphere_p0"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:layout_marginTop="20dp"
+                android:text="atmosphere.T0" />
+
+            <TextView
+                android:id="@+id/txt_atmosphere_T0"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:paddingLeft="40dp"
+                android:layout_below="@id/tv_textAtmosphere_T0"
+                android:layout_marginTop="5dp"
+                android:text="0000.00000" />
+
+            <TextView
+                android:id="@+id/tv_textInlet_sigma"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@id/txt_atmosphere_T0"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:layout_marginTop="20dp"
+                android:text="inlet.sigma"/>
+
+            <TextView
+                android:id="@+id/txt_inlet_sigma"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_below="@id/tv_textInlet_sigma"
+                android:layout_marginTop="5dp"
+                android:paddingLeft="40dp"
+                android:text="0000.00000" />
+
+                <TextView
+                android:id="@+id/tv_textComp_pi_c"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@id/txt_inlet_sigma"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:layout_marginTop="20dp"
+                android:text="comp.pi_c"/>
+
+            <TextView
+                android:id="@+id/txt_comp_pi_c"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_below="@id/tv_textComp_pi_c"
+                android:layout_marginTop="5dp"
+                android:paddingLeft="40dp"
+                android:text="0000.00000" />
+
+            <TextView
+                android:id="@+id/tv_textComp_eta_stag_p"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@id/txt_comp_pi_c"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:layout_marginTop="20dp"
+                android:text="comp.eta_stag_p"/>
+
+            <TextView
+                android:id="@+id/txt_comp_eta_stag_p"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_below="@id/tv_textComp_eta_stag_p"
+                android:layout_marginTop="5dp"
+                android:paddingLeft="40dp"
+                android:text="0000.00000" />
+
+            <TextView
+                android:id="@+id/tv_textComb_chamber_eta_burn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@id/txt_comp_eta_stag_p"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:layout_marginTop="20dp"
+                android:text="comb_chamber.eta_burn"/>
+
+            <TextView
+                android:id="@+id/txt_comb_chamber_eta_burn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_below="@id/tv_textComb_chamber_eta_burn"
+                android:layout_marginTop="5dp"
+                android:paddingLeft="40dp"
+                android:text="0000.00000" />
+
+            <TextView
+                android:id="@+id/tv_textComb_chamber_Q_n"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@id/txt_comb_chamber_eta_burn"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:layout_marginTop="20dp"
+                android:text="comb_chamber.Q_n"/>
+
+            <TextView
+                android:id="@+id/txt_comb_chamber_Q_n"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_below="@id/tv_textComb_chamber_Q_n"
+                android:layout_marginTop="5dp"
+                android:paddingLeft="40dp"
+                android:text="0000.00000" />
+
+            <TextView
+                android:id="@+id/tv_textComb_chamber_T_stag_out"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@id/txt_comb_chamber_Q_n"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:layout_marginTop="20dp"
+                android:text="comb_chamber.T_stag_out"/>
+
+            <TextView
+                android:id="@+id/txt_comb_chamber_T_stag_out"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_below="@id/tv_textComb_chamber_T_stag_out"
+                android:layout_marginTop="5dp"
+                android:paddingLeft="40dp"
+                android:text="0000.00000" />
+
+            <TextView
+                android:id="@+id/tv_textTurbine_eta_stag_p"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@id/txt_comb_chamber_T_stag_out"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:layout_marginTop="20dp"
+                android:text="turbine.eta_stag_p"/>
+
+            <TextView
+                android:id="@+id/txt_turbine_eta_stag_p"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_below="@id/tv_textTurbine_eta_stag_p"
+                android:layout_marginTop="5dp"
+                android:paddingLeft="40dp"
+                android:text="0000.00000" />
+
+            <TextView
+                android:id="@+id/tv_textTurbine_p_stag_out"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@id/txt_turbine_eta_stag_p"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:layout_marginTop="20dp"
+                android:text="turbine.p_stag_out"/>
+
+            <TextView
+                android:id="@+id/txt_turbine_p_stag_out"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_below="@id/tv_textTurbine_p_stag_out"
+                android:layout_marginTop="5dp"
+                android:paddingLeft="40dp"
+                android:text="0000.00000" />
+
+            <TextView
+                android:id="@+id/tv_textLoad_power"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@id/txt_turbine_p_stag_out"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:layout_marginTop="20dp"
+                android:text="turbine.p_stag_out"/>
+
+            <TextView
+                android:id="@+id/txt_load_power"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_below="@id/tv_textLoad_power"
+                android:layout_marginTop="5dp"
+                android:paddingLeft="40dp"
+                android:text="0000.00000" />
+
+            <TextView
+                android:id="@+id/tv_textOutlet_sigma"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@id/txt_load_power"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:layout_marginTop="20dp"
+                android:text="turbine.p_stag_out"/>
+
+            <TextView
+                android:id="@+id/txt_outlet_sigma"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_below="@id/tv_textOutlet_sigma"
+                android:layout_marginTop="5dp"
+                android:paddingLeft="40dp"
+                android:text="0000.00000" />
+
+            <TextView
+                android:id="@+id/tv_textRegenerator_T_stag_hot_in"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@id/txt_outlet_sigma"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:layout_marginTop="20dp"
+                android:text="turbine.p_stag_out"/>
+
+            <TextView
+                android:id="@+id/txt_regenerator_T_stag_hot_in"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_below="@id/tv_textRegenerator_T_stag_hot_in"
+                android:layout_marginTop="5dp"
+                android:paddingLeft="40dp"
+                android:text="0000.00000" />
+
+            <TextView
+                android:id="@+id/tv_textRegenerator_T_stag_hot_out"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@id/txt_regenerator_T_stag_hot_in"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:layout_marginTop="20dp"
+                android:text="turbine.p_stag_out"/>
+
+            <TextView
+                android:id="@+id/txt_regenerator_T_stag_hot_out"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_below="@id/tv_textRegenerator_T_stag_hot_out"
+                android:layout_marginTop="5dp"
+                android:paddingLeft="40dp"
+                android:layout_marginBottom="30dp"
+                android:text="0000.00000" />
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+    <android.support.design.widget.FloatingActionButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/process"
+        app:backgroundTint="#025090"
+        android:src="@drawable/process"
+        app:fabSize="normal"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_gravity="bottom|right|end"
+        android:layout_marginBottom="15dp"
+        android:layout_marginRight="15dp"
+        app:elevation="2dp"/>
+
+</android.support.design.widget.CoordinatorLayout>
