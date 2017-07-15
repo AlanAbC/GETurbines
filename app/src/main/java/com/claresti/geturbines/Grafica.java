@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 
 import com.android.volley.Request;
 import com.android.volley.Response;
@@ -39,13 +40,15 @@ public class Grafica extends AppCompatActivity {
     private FloatingActionButton guardar;
     private FloatingActionButton home;
     private ProgressBar progreso;
+    TextView maximo;
+    TextView minimo;
 
     // Declaracion de objetos
     private ArrayList<Variables> var;
     private ArrayList<Outputs> outputs;
 
     // Declaracion de variables extra
-    String urls="192.168.43.233/ge/api/index.php?";
+    String urls="localhost/ge/api/index.php?";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,20 +61,26 @@ public class Grafica extends AppCompatActivity {
         guardar = (FloatingActionButton)findViewById(R.id.accion_guardar);
         home = (FloatingActionButton)findViewById(R.id.accion_Home);
         progreso = (ProgressBar)findViewById(R.id.progress);
+        maximo = (TextView)findViewById(R.id.txt_max_input);
+        minimo = (TextView)findViewById(R.id.txt_min_input);
+
+        maximo.setText("7040163");
+        minimo.setText("6.46683703");
 
         // Asignacion de variables de objetos
         var = ArrayVariables.getArrayVariables();
-        outputs = new ArrayList<Outputs>();
 
         // Llamada a los metos para crear listeners y cargar la informacion inicial
         setListeners();
-        cargarRespuesta();
+        //cargarRespuesta();
+        rellenarGraficaCategorias();
     }
 
     private void setListeners() {
         tabla.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                ConectorOutputs.setOut(outputs);
                 Intent i = new Intent(Grafica.this, Tabla.class);
                 startActivity(i);
             }
@@ -79,7 +88,7 @@ public class Grafica extends AppCompatActivity {
         guardar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(Grafica.this, Tabla.class);
+                Intent i = new Intent(Grafica.this, MainActivity.class);
                 startActivity(i);
             }
         });
@@ -92,7 +101,7 @@ public class Grafica extends AppCompatActivity {
         });
     }
 
-    public void cargarRespuesta(){
+    /*public void cargarRespuesta(){
         progreso.setVisibility(View.VISIBLE);
         for(Variables v : var){
            final Gson gson = new Gson();
@@ -168,7 +177,7 @@ public class Grafica extends AppCompatActivity {
        }
        progreso.setVisibility(View.GONE);
        rellenarGraficaCategorias();
-    }
+    }*/
 
     private void rellenarGraficaCategorias() {
         //creacion de la grafica
@@ -178,28 +187,64 @@ public class Grafica extends AppCompatActivity {
         ArrayList<String> labels = new ArrayList<String>();
         int flagIndex = 0;
 
-        for(Outputs c : outputs){
-            entries.add(new BarEntry(Float.parseFloat(c.getOutput0()), flagIndex));
-            flagIndex ++;
-            entries.add(new BarEntry(Float.parseFloat(c.getOutput1()), flagIndex));
-            flagIndex ++;
-            entries.add(new BarEntry(Float.parseFloat(c.getOutput2()), flagIndex));
-            flagIndex ++;
-            entries.add(new BarEntry(Float.parseFloat(c.getOutput3()), flagIndex));
-            flagIndex ++;
-            entries.add(new BarEntry(Float.parseFloat(c.getOutput4()), flagIndex));
-            flagIndex ++;
-            labels.add("Load.G_air");
-            labels.add("comp.T_stag_out");
-            labels.add("comp.P_stag_out");
-            labels.add("Turbine.T_stage_out");
-            labels.add("Turbine.P_stage_out");
-        }
+        entries.add(new BarEntry(7.1980655f, 0));
+        entries.add(new BarEntry(740163f, 1));
+        entries.add(new BarEntry(490000.0f, 2));
+        entries.add(new BarEntry(102122.5535f, 3));
+        entries.add(new BarEntry(102122.7266f, 4));
+        entries.add(new BarEntry(6.46683703f, 5));
+        entries.add(new BarEntry(452.740163f, 6));
+        entries.add(new BarEntry(490000.0f, 7));
+        entries.add(new BarEntry(1154.981122f, 8));
+        entries.add(new BarEntry(102122.7266f, 9));
+        entries.add(new BarEntry(7.1980655f, 10));
+        entries.add(new BarEntry(740163f, 11));
+        entries.add(new BarEntry(490000.0f, 12));
+        entries.add(new BarEntry(102122.5535f, 13));
+        entries.add(new BarEntry(102122.7266f, 14));
+        entries.add(new BarEntry(6.46683703f, 15));
+        entries.add(new BarEntry(452.740163f, 16));
+        entries.add(new BarEntry(490000.0f, 17));
+        entries.add(new BarEntry(1154.981122f, 18));
+        entries.add(new BarEntry(102122.7266f, 19));
+        entries.add(new BarEntry(7.1980655f, 20));
+        entries.add(new BarEntry(740163f, 21));
+        entries.add(new BarEntry(490000.0f, 22));
+        entries.add(new BarEntry(102122.5535f, 23));
+        entries.add(new BarEntry(102122.7266f, 24));
 
-        BarDataSet dataset = new BarDataSet(entries, "Ingreso / Egreso");
+        labels.add("Load.G_air");
+        labels.add("comp.T_stag_out");
+        labels.add("comp.P_stag_out");
+        labels.add("Turbine.T_stage_out");
+        labels.add("Turbine.P_stage_out");
+        labels.add("Load.G_air");
+        labels.add("comp.T_stag_out");
+        labels.add("comp.P_stag_out");
+        labels.add("Turbine.T_stage_out");
+        labels.add("Turbine.P_stage_out");
+        labels.add("Load.G_air");
+        labels.add("comp.T_stag_out");
+        labels.add("comp.P_stag_out");
+        labels.add("Turbine.T_stage_out");
+        labels.add("Turbine.P_stage_out");
+        labels.add("Load.G_air");
+        labels.add("comp.T_stag_out");
+        labels.add("comp.P_stag_out");
+        labels.add("Turbine.T_stage_out");
+        labels.add("Turbine.P_stage_out");
+        labels.add("Load.G_air");
+        labels.add("comp.T_stag_out");
+        labels.add("comp.P_stag_out");
+        labels.add("Turbine.T_stage_out");
+        labels.add("Turbine.P_stage_out");
+
+        BarDataSet dataset = new BarDataSet(entries, "");
 
         BarData data = new BarData(labels, dataset);
-        int[] colores = {Color.parseColor("#025090"), Color.parseColor("#45ADA8"), Color.parseColor("#C230AC"), Color.parseColor("#32C07C"), Color.parseColor("#E97E0A"), Color.parseColor("#F00209")};
+        int[] colores = {Color.parseColor("#025090"), Color.parseColor("#45ADA8"),
+                Color.parseColor("#C230AC"), Color.parseColor("#32C07C"),
+                Color.parseColor("#E97E0A"), Color.parseColor("#F00209")};
         dataset.setColors(ColorTemplate.createColors(colores));//
         barChart.setData(data);
         barChart.setDescription("");
